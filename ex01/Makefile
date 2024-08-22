@@ -11,10 +11,10 @@ HEADERS := ClapTrap.hpp\
 OBJS = $(SRCS:.cpp=.o)
 
 $(NAME) : $(OBJS)
-	$(CPP) $(CPPFLAG) $(OBJS) -o $(NAME)
+	$(CPP) $(CXXFLAG) $(OBJS) -o $(NAME)
 
 %.o: %.cpp $(HEADERS)
-	$(CPP) $(CPPFLAG) -c $< -o $@
+	$(CPP) $(CXXFLAG) -c $< -o $@
 
 clean :
 	$(RM) $(OBJS)

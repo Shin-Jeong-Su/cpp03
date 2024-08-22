@@ -23,7 +23,7 @@ ClapTrap::~ClapTrap()
 
 void    ClapTrap::attack(const std::string& target)
 {
-    if (!checkCanDoSomething(*this))
+    if (!_checkCanDoSomething())
         return ;
     _energyPoint--;
     std::cout<<"ClapTrap "<<_name<<" attacks "<<target<<", causing "<<_attackDamage<<" points of damage!\n";
@@ -40,7 +40,7 @@ void    ClapTrap::takeDamage(unsigned int amount)
 }
 void    ClapTrap::beRepaired(unsigned int amount)
 {
-    if (!checkCanDoSomething(*this))
+    if (!_checkCanDoSomething())
         return ;
     _energyPoint--;
     _hitPoint+=amount;
@@ -58,7 +58,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& rhs)
 }
 
 //private
-bool    ClapTrap::checkCanDoSomething(const ClapTrap& rhs) const
+bool    ClapTrap::_checkCanDoSomething() const
 {
     if (!_hitPoint){
         std::cout<<"ClapTrap "<<_name<<" can't do anything, becuase It has zero hit point\n";

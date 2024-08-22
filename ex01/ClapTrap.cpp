@@ -1,5 +1,6 @@
 #include "ClapTrap.hpp"
 
+//
 ClapTrap::ClapTrap()
 :_name("noName"),_hitPoint(10),_energyPoint(10),_attackDamage(0)
 {
@@ -15,12 +16,12 @@ ClapTrap::ClapTrap(std::string paramName)
 {
     std::cout<<"ClapTrap "<<_name<<" is constructed by a parameter constructor\n";
 }
-
+//
 ClapTrap::~ClapTrap()
 {
     std::cout<<"ClapTrap "<<_name<<" is destroyed\n";
 }
-
+//
 void    ClapTrap::attack(const std::string& target)
 {
     if (!checkCanDoSomething(*this))
@@ -46,7 +47,7 @@ void    ClapTrap::beRepaired(unsigned int amount)
     _hitPoint+=amount;
     std::cout<<"ClapTrap "<<_name<<" is repaired by "<<amount<<", "<<"now It has "<<_hitPoint<<" hitpoint.\n";
 }
-
+//
 ClapTrap& ClapTrap::operator=(const ClapTrap& rhs)
 {
     std::cout<<"ClapTrap "<<_name<<" is copied from "<<rhs._name<<" by a operator=\n";

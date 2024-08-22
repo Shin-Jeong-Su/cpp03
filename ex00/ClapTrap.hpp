@@ -24,7 +24,7 @@ class ClapTrap
         unsigned int    _energyPoint;
         unsigned int    _attackDamage;
 
-        bool    checkCanDoSomething(const ClapTrap& rhs) const;
+        bool    _checkCanDoSomething() const;
 };
 
 #endif
