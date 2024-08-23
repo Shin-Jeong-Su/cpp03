@@ -3,7 +3,6 @@
 #define __CLAPTRAP_H__
 
 #include <string>
-#include <iostream>
 class ClapTrap
 {
     public:

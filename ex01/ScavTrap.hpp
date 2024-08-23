@@ -8,7 +8,7 @@ class ScavTrap : public ClapTrap
 {
     public:
         ScavTrap();
-        ScavTrap(const std::string paramName);
+        ScavTrap(const std::string name);
         ScavTrap(const ScavTrap& rhs);
 
         ~ScavTrap();
@@ -18,5 +18,6 @@ class ScavTrap : public ClapTrap
 
         ScavTrap&   operator=(const ScavTrap& rhs);
     private:
+        bool    _checkCanDoSomething() const override;
 };
 #endif

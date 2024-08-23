@@ -3,19 +3,23 @@
 #define __CLAPTRAP_H__
 
 #include <string>
-#include <iostream>
+
 class ClapTrap
 {
     public:
         ClapTrap();
-        ClapTrap(std::string paramName);
+        ClapTrap(std::string name);
+        ClapTrap(std::string name
+                , unsigned int hitPoint
+                , unsigned int energyPoint
+                , unsigned int attackDamage);
         ClapTrap(ClapTrap& rhs);
 
         virtual ~ClapTrap();
 
         virtual void    attack(const std::string& target);
-        void    takeDamage(unsigned int amount);
-        void    beRepaired(unsigned int amount);
+        void            takeDamage(unsigned int amount);
+        void            beRepaired(unsigned int amount);
 
         ClapTrap& operator=(const ClapTrap& rhs);
     protected:
@@ -24,7 +28,7 @@ class ClapTrap
         unsigned int    _energyPoint;
         unsigned int    _attackDamage;
 
-        bool    checkCanDoSomething(const ClapTrap& rhs) const;
+        virtual bool    _checkCanDoSomething() const;
 };
 
 #endif

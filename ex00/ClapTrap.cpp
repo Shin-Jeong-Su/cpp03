@@ -1,4 +1,5 @@
 #include "ClapTrap.hpp"
+#include <iostream>
 
 ClapTrap::ClapTrap()
 :_name("noName"),_hitPoint(10),_energyPoint(10),_attackDamage(0)
@@ -57,7 +58,6 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& rhs)
     return (*this);
 }
 
-//private
 bool    ClapTrap::_checkCanDoSomething() const
 {
     if (!_hitPoint){

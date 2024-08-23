@@ -1,5 +1,5 @@
 #include "ClapTrap.hpp"
-
+#include <iostream>
 int	main(void)
 {
 	ClapTrap ct1("ct1");
