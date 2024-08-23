@@ -16,7 +16,8 @@ ClapTrap::ClapTrap(std::string name
                     , unsigned int energyPoint
                     , unsigned int attackDamage)
 :_name(name),_hitPoint(hitPoint),_energyPoint(energyPoint),_attackDamage(attackDamage){
-    std::cout<<"ClapTrap(name, hitPoint, energyPoint, attackDamage): "<< _name<<"\n";
+    std::cout<<"ClapTrap(name, hitPoint, energyPoint, attackDamage): ";
+	std::cout<<_name<<", "<<_hitPoint<<", "<<_energyPoint<<", "<<_attackDamage<<"\n";
 }
 
 ClapTrap::ClapTrap(ClapTrap& rhs)

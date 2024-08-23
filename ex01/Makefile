@@ -4,9 +4,11 @@ RM := rm -f
 CXXFLAG := -Wall -Wextra -Werror -std=c++98
 
 SRCS := main.cpp\
-		ClapTrap.cpp
+		ClapTrap.cpp\
+		ScavTrap.cpp
 
 HEADERS := ClapTrap.hpp\
+			ScavTrap.hpp
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -18,6 +18,6 @@ class ScavTrap : public ClapTrap
 
         ScavTrap&   operator=(const ScavTrap& rhs);
     private:
-        bool    _checkCanDoSomething() const override;
+        bool    _checkCanDoSomething() const;
 };
 #endif

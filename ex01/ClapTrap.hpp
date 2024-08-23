@@ -15,7 +15,7 @@ class ClapTrap
                 , unsigned int attackDamage);
         ClapTrap(ClapTrap& rhs);
 
-        virtual ~ClapTrap();
+        virtual	~ClapTrap();
 
         virtual void    attack(const std::string& target);
         void            takeDamage(unsigned int amount);
