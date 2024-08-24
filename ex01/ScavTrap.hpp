@@ -11,13 +11,13 @@ class ScavTrap : public ClapTrap
         ScavTrap(const std::string name);
         ScavTrap(const ScavTrap& rhs);
 
-        ~ScavTrap();
+        virtual ~ScavTrap();
 
-        void    attack(const std::string& target);
+        virtual void    attack(const std::string& target);
         void    guardGate();
 
         ScavTrap&   operator=(const ScavTrap& rhs);
     private:
-        bool    _checkCanDoSomething() const;
+        virtual bool    _checkCanDoSomething() const;
 };
 #endif
