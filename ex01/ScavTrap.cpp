@@ -1,13 +1,17 @@
 #include "ScavTrap.hpp"
 #include <iostream>
 
+const unsigned int ScavTrap::_kHitPoint = 100;
+const unsigned int ScavTrap::_kEnergyPoint = 50;
+const unsigned int ScavTrap::_kAttackDamage = 20;
+
 ScavTrap::ScavTrap()
-:ClapTrap("noName", 100, 50, 20){
+:ClapTrap("noName", _kHitPoint, _kEnergyPoint, _kAttackDamage){
     std::cout<<"ScavTrap(): "<<_name<<"\n";
 }
 
 ScavTrap:: ScavTrap(const std::string name)
-:ClapTrap(name, 100, 50, 20){
+:ClapTrap(name, _kHitPoint, _kEnergyPoint, _kAttackDamage){
     std::cout<<"ScavTrap(name): "<<_name<<"\n";
 }
 
@@ -26,8 +30,28 @@ void    ScavTrap::attack(const std::string& target){
     _energyPoint--;
     std::cout<<"ScavTrap "<<_name<<" attacks "<<target;
     std::cout<<", causing "<<_attackDamage<<" points of damage!\n";
-
 }
+
+void    ScavTrap::takeDamage(unsigned int amount){
+    if (_hitPoint<=amount){
+        _hitPoint=0;
+        std::cout<<"ScavTrap "<<_name<<" takes "<<amount<<" damage and It dies.\n";
+        return ;
+    }
+    _hitPoint-=amount;
+    std::cout<<"ScavTrap "<<_name<<" takes "<<amount<<" damage ";
+    std::cout<<"and now It has "<<_hitPoint<<" hit points.\n";
+}
+
+void    ScavTrap::beRepaired(unsigned int amount){
+    if (!_checkCanDoSomething())
+        return ;
+    _energyPoint--;
+    _hitPoint+=amount;
+    std::cout<<"ScavTrap "<<_name<<" is repaired by "<<amount;
+    std::cout<<", "<<"now It has "<<_hitPoint<<" hitpoint.\n";
+}
+
 void    ScavTrap::guardGate(){
     if (!_checkCanDoSomething())
         return ;
@@ -51,7 +75,7 @@ bool    ScavTrap::_checkCanDoSomething() const{
         return (false);
     }
     if (!_energyPoint){
-        std::cout<<"ClapTrap "<<_name<<" can't do anything ";
+        std::cout<<"ScavTrap "<<_name<<" can't do anything ";
         std::cout<<"becuase It has zero energy point\n";
         return (false);
     }

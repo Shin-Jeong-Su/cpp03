@@ -1,29 +1,29 @@
 #pragma once
-#ifndef __SCAVTRAP_H__
-#define __SCAVTRAP_H__
+
+#ifndef __FRAGTRAP_H__
+#define __FRAGTRAP_H__
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class FragTrap : public ClapTrap
 {
     public:
-        ScavTrap();
-        ScavTrap(const std::string name);
-        ScavTrap(const ScavTrap& rhs);
+        FragTrap();
+        FragTrap(const std::string name);
+        FragTrap(const FragTrap& rhs);
 
-        virtual ~ScavTrap();
+        virtual ~FragTrap();
 
         virtual void    attack(const std::string& target);
         virtual void    takeDamage(unsigned int amount);
         virtual void    beRepaired(unsigned int amount);
-        void    guardGate();
+        void            highFivesGuys();
 
-        ScavTrap&   operator=(const ScavTrap& rhs);
+        FragTrap&   operator=(const FragTrap& rhs);
     private:
+        virtual bool    _checkCanDoSomething() const;
         static const unsigned int _kHitPoint;
         static const unsigned int _kEnergyPoint;
         static const unsigned int _kAttackDamage;
-
-        virtual bool    _checkCanDoSomething() const;
 };
 #endif
