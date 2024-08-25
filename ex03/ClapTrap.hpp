@@ -1,11 +1,9 @@
-#pragma once
 #ifndef __CLAPTRAP_H__
 #define __CLAPTRAP_H__
 
 #include <string>
 
-class ClapTrap
-{
+class ClapTrap{
     public:
         ClapTrap();
         ClapTrap(std::string name);
