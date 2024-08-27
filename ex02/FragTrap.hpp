@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef __FRAGTRAP_H__
 #define __FRAGTRAP_H__
 

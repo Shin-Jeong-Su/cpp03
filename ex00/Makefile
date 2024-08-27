@@ -1,5 +1,5 @@
 NAME := a.out
-CPP := c++
+CXX := c++
 RM := rm -f
 CXXFLAG := -Wall -Wextra -Werror -std=c++98
 
@@ -11,10 +11,10 @@ HEADERS := ClapTrap.hpp\
 OBJS = $(SRCS:.cpp=.o)
 
 $(NAME) : $(OBJS)
-	$(CPP) $(CXXFLAG) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAG) $(OBJS) -o $(NAME)
 
 %.o: %.cpp $(HEADERS)
-	$(CPP) $(CXXFLAG) -c $< -o $@
+	$(CXX) $(CXXFLAG) -c $< -o $@
 
 clean :
 	$(RM) $(OBJS)

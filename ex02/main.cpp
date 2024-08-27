@@ -24,7 +24,6 @@ int	main(void)
 		// 	std::cout<<"attack "<<i<<"th tries: ";
 		// 	ft3.attack("ft2");
 		// 	ft2.takeDamage(30);
-		// 	//ft가 takeDamage했다고 가정. 죽어도 공격 가능하다고 가정.
 		// }
 
 		//copy operator
@@ -41,7 +40,6 @@ int	main(void)
 	{
 		std::cout<<"\n";
 		//virtual destructor test
-		std::cout<<"#\ndestructor test\n";
 		FragTrap *ptrFt2 = new FragTrap("ptrFt2");
 		ClapTrap *adtCt2 = ptrFt2;
 		delete adtCt2;

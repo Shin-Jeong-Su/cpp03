@@ -51,10 +51,10 @@ void    DiamondTrap::beRepaired(unsigned int amount){
 void	DiamondTrap::whoAmI(){
 	std::cout<<"whoAmI(): ";
 	std::cout<<"ClapTrap "<<ClapTrap::_name<<", ";
-	std::cout<<"DiamondTrap "<<_name<<": ";
+	std::cout<<"DiamondTrap "<<_name<<": {";
 	std::cout<<"hitPoint: "<<_hitPoint<<", ";
 	std::cout<<"energyPoint: "<<_energyPoint<<", ";
-	std::cout<<"attackDamage: "<<_attackDamage<<"\n";
+	std::cout<<"attackDamage: "<<_attackDamage<<"}\n";
 }
 
 DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& rhs){

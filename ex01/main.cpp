@@ -14,6 +14,7 @@ int	main(void)
 
 		//copy constructor
 		//ScavTrap st3(st2)
+		std::cout<<"\n";
 		ScavTrap st3=st2;
 
 		//attack test
@@ -21,10 +22,10 @@ int	main(void)
 		// for(int i=1;i<=51;i++){
 		// 	std::cout<<"attack "<<i<<"th tries: ";
 		// 	st3.attack("st2");
-		// 	// st2.takeDamage(20); //보기 지저분해서 주석처리
-		// 	//죽어도 공격 가능하다고 가정.
+		// 	// st2.takeDamage(20);
 		// }
 		//copy operator
+		std::cout<<"\n";
 		ScavTrap st4;
 		st4=st2;
 

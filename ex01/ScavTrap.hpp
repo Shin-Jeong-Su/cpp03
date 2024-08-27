@@ -1,4 +1,3 @@
-#pragma once
 #ifndef __SCAVTRAP_H__
 #define __SCAVTRAP_H__
 
